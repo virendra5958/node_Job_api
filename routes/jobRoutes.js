@@ -1,5 +1,5 @@
 const express =require('express');
-const jobDetails = require ('../module/job');
+const jobDetails = require ('../module/jobController');
 const router =express.Router();
 
 //post method
@@ -61,9 +61,11 @@ router.put('/:id', async (req, res) => {
     }
 });
 
+
+//Delete method
 router.delete('/:id', async (req, res) => { 
     try {
-        const jobId = req.params.id; // Extract job ID from request parameters
+        const jobId = req.params.id; 
         
         const response = await jobDetails.findOneAndDelete({ _id: jobId }); 
         if (!response) {
@@ -80,7 +82,7 @@ router.delete('/:id', async (req, res) => {
 
 
 
-//Delete method
+
 
 
 
