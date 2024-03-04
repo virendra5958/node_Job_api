@@ -27,6 +27,7 @@ const jobDetails = new mongoose.Schema({
 
 
 });
+//updated
 
 const Jobs = mongoose.model('Jobs', jobDetails);
 
